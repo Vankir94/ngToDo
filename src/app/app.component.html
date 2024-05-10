@@ -1,1 +1,3 @@
-<div>hello</div>
+<app-todo-create-form-ui (create)="onCreate($event)"></app-todo-create-form-ui>
+
+<app-todo-list-ui [todoList]="todoList$ | async" (delete)="onDelete($event)"></app-todo-list-ui>
