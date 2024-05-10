@@ -1,3 +1,4 @@
-export class Todo {
-
+export class Task {
+  title: string = '';
+  isDone: boolean =  false;
 }
