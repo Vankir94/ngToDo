@@ -1,6 +1,6 @@
 import {Task} from "./Task";
 
-export class ToDo {
+export class Todo {
   newTask: Task = new Task();
   taskList: Task[] = [];
 }
