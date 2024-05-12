@@ -16,10 +16,14 @@ import {TuiForModule} from "@taiga-ui/cdk";
 export class TodoListUiComponent {
   @Input() todoList: Task[] | null = [];
   @Output() delete = new EventEmitter<string>();
+  @Output() toggle = new EventEmitter<string>();
 
-  // onDelete(todoList: Task[] | null) {
-  //   if (todoList) {
-  //     this.delete.emit(todoList[0].title);
-  //   }
-  // }
+  deleteItem(name: string) {
+    this.delete.emit(name);
+  }
+
+  onToggle(event: Event, name: string) {
+    event.preventDefault();
+    this.toggle.emit(name);
+  }
 }

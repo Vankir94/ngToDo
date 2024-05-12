@@ -23,6 +23,15 @@ export const todoReducer = (state = initialState, action: TodoActions) => {
         ...state,
         todoList: state.todoList.filter(el => el.title !== action.payload.name)
       };
+      case todoActionsType.toggle:
+        return {
+          ...state,
+          todoList: state.todoList.map(todo => todo.title === action.payload.name ? {...todo, isDone: !todo.isDone} : todo)
+        };
+        case todoActionsType.load:
+          return {
+            ...action.payload.state
+          };
     default:
       return state;
   }
